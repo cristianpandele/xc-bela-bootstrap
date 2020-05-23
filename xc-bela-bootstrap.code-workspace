@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"remote.containers.workspaceMountConsistency": "delegated",
+		"git.autoRepositoryDetection": "openEditors",
+		"git.detectSubmodules": false,
+		"cmake.copyCompileCommands": "${workspaceRoot}/compile_commands.json",
+		"clangd.path": "/usr/bin/clangd-10",
+		"files.exclude": {
+			"**/.clangd": true,
+			"compile_commands.json": true
+		}
+	}
+}
