@@ -12,8 +12,8 @@ include_directories(
     ${CMAKE_SYSROOT}/usr/include/c++/6.3.0
     ${CMAKE_SYSROOT}/usr/include/arm-linux-gnueabihf
     ${CMAKE_SYSROOT}/usr/include/arm-linux-gnueabihf/c++/6.3.0
-    ./external/Bela
-    ./external/Bela/include
+    ./Bela
+    ./Bela/include
     ${CMAKE_SYSROOT}/usr/xenomai/include
 )
 
