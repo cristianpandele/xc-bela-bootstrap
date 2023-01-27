@@ -1,11 +1,27 @@
-
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 3.18)
 project(my-bela-project VERSION 0.1.0)
+
+set(CMAKE_CXX_STANDARD 14)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -g -fPIC -ftree-vectorize -ffast-math")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -g -fPIC -ftree-vectorize -ffast-math")
+
+find_library(COBALT_LIB REQUIRED
+    NAMES cobalt libcobalt
+    HINTS "${CMAKE_SYSROOT}/usr/xenomai/lib"
+)
+
+find_library(NEON_LIB REQUIRED
+    NAMES NE10 libNE10
+    HINTS "${CMAKE_SYSROOT}/usr/lib"
+)
+
+find_library(MATHNEON_LIB REQUIRED
+    NAMES mathneon libmathneon
+    HINTS "${CMAKE_SYSROOT}/usr/lib"
+)
 
 include_directories(
     ${CMAKE_SYSROOT}/usr/include
