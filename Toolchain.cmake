@@ -5,12 +5,12 @@ set(CMAKE_SYSTEM_PROCESSOR armv7a)
 set(triple arm-linux-gnueabihf)
 
 # compiler settings
-set(CMAKE_C_COMPILER /usr/bin/clang-10 CACHE INTERNAL "")
-set(CMAKE_CXX_COMPILER /usr/bin/clang++-10 CACHE INTERNAL "")
+set(CMAKE_C_COMPILER /usr/bin/arm-linux-gnueabihf-gcc CACHE INTERNAL "")
+set(CMAKE_CXX_COMPILER /usr/bin/arm-linux-gnueabihf-g++ CACHE INTERNAL "")
 set(CMAKE_C_COMPILER_TARGET ${triple})
 set(CMAKE_CXX_COMPILER_TARGET ${triple})
-set(CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN /usr/lib/llvm-10)
-set(CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN /usr/lib/llvm-10)
+set(CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN /usr/lib/llvm-15)
+set(CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN /usr/lib/llvm-15)
 
 # misc settings
 set(CMAKE_SYSROOT /sysroot)
