@@ -1,0 +1,4 @@
+[submodule "Bela"]
+	path = Bela
+	url = https://github.com/cristianpandele/Bela.git
+	branch = master
