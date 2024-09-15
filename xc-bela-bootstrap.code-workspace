@@ -9,7 +9,7 @@
 		"git.autoRepositoryDetection": "openEditors",
 		"git.detectSubmodules": false,
 		"cmake.copyCompileCommands": "${workspaceRoot}/compile_commands.json",
-		"clangd.path": "/usr/bin/clangd-10",
+		"clangd.path": "/usr/bin/clangd-15",
 		"files.exclude": {
 			"**/.clangd": true,
 			"compile_commands.json": true
