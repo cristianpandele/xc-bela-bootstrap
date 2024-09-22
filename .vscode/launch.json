@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "gdb",
+            "request": "attach",
+            "name": "Bela",
+            "target": "${env:BBB_HOSTNAME}:3333",
+            "remote": true,
+            "executable": "${command:cmake.launchTargetPath}",
+            "gdbpath": "gdb",
+            "cwd": "${workspaceRoot}",
+            "autorun": [
+                "set follow-fork-mode parent",
+                "symbol-file ${command:cmake.getLaunchTargetPath}",
+                "break render",
+                "set output-radix 16",
+                "set remote exec-file /root/${command:cmake.getLaunchTargetFilename}",
+                "continue"
+            ],
+            "preLaunchTask": "Start GDB Server and Attach",
+            "postDebugTask": "Stop GDB Server"
+        },
+    ]
+}
+

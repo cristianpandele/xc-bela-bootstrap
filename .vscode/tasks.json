@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start GDB Server and Attach",
+            "type": "shell",
+            "isBackground": true,
+            "command": "ssh root@${env:BBB_HOSTNAME} -C gdbserver :3333 ~/${command:cmake.getLaunchTargetFilename}",
+            "problemMatcher":
+            {
+                "pattern": {
+                    "regexp": "Listening on port 3333",
+                    "file": 1,
+                    "location": 2,
+                    "message": 3
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^Process.*",
+                    "endsPattern": "^Listening on port 3333.*"
+                }
+            }
+        },
+        {
+            "label": "Stop GDB Server",
+            "type": "shell",
+            "command": "ssh root@${env:BBB_HOSTNAME} -C pkill gdbserver || true",
+        }
+    ]
+}
