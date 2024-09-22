@@ -6,8 +6,7 @@
             "type": "shell",
             "isBackground": true,
             "command": "ssh root@${env:BBB_HOSTNAME} -C gdbserver :3333 ~/${command:cmake.getLaunchTargetFilename}",
-            "problemMatcher":
-            {
+            "problemMatcher": {
                 "pattern": {
                     "regexp": "Listening on port 3333",
                     "file": 1,
@@ -24,7 +23,27 @@
         {
             "label": "Stop GDB Server",
             "type": "shell",
-            "command": "ssh root@${env:BBB_HOSTNAME} -C pkill gdbserver || true",
+            "command": "ssh root@${env:BBB_HOSTNAME} -C pkill gdbserver || true"
+        },
+        {
+            "label": "Launch Bela Application",
+            "type": "shell",
+            "isBackground": true,
+            "command": "ssh root@${env:BBB_HOSTNAME} -C ~/${command:cmake.getLaunchTargetFilename}",
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": ""
+                },
+                "background": {
+                    "activeOnStart": true
+                }
+            }
+        },
+        {
+            "label": "Terminate Bela Application",
+            "type": "shell",
+            "command": "ssh root@${env:BBB_HOSTNAME} -C pkill ${command:cmake.getLaunchTargetFilename} || true",
+            "problemMatcher": []
         }
     ]
 }
