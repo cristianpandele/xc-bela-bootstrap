@@ -3,6 +3,10 @@ project(my-bela-project VERSION 0.1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# misc settings
+set(CMAKE_SYSROOT /sysroot)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
+
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -g -fPIC -ftree-vectorize -ffast-math -pthread -D_GNU_SOURCE -D_REENTRANT -fasynchronous-unwind-tables -D__COBALT__ -D__COBALT_WRAP_")
